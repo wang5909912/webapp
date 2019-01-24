@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+  />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#CC4B4A" />
+  <title>PPT-web</title>
+  <link rel="stylesheet" href="../css/index.css">
+</head>
+
+<body>
+  <div class="needpassword">
+    <div id="edit_mask"></div>
+    <!--遮罩层-->
+    <!--弹出编辑框-->
+    <div class="edit_popup">
+      <div class="need_title">
+        请输入访问密码
+      </div>
+      <div class="need_content">
+        <input id="content_input_value" type="text" placeholder="请输入密码">
+      </div>
+      <div class="need_footer">
+        <button class="footer_surebtn">确定</button>
+        <button class="footer_cancelbtn">重置</button>
+      </div>
+    </div>
+  </div>
+  <div class="unneedpassword">
+    <header class="home_header">
+      <div class="home_title">
+        <div class="home_title-filename">文件名</div>
+      </div>
+      <div class="home_title-icon" id="jumpplaymode">
+        <img src="../images/right.png" alt="" width="30px">
+      </div>
+    </header>
+    <main class="home_main">
+      <div class="content">
+      </div>
+    </main>
+  </div>
+
+</body>
+
+<script src="../js/jquery.min.js"></script>
+<script>
+  window.onload = function () {
+    if (sessionStorage.getItem("flag") == 'true') {
+      console.log(2)
+      $('.unneedpassword').css('display', 'block');
+      $('.needpassword').css('display', 'none')
+    } else {
+      //     //这里请求接口看是否需要密码输入
+      //     var ajax = $.ajax({
+      //       url: '',
+      //       type: 'GET',
+      //       dataType: 'JSON'
+      //     });
+      //     $.when(ajax).done(function (data) {
+      //         flag = true;
+      // sessionStorage.setItem("flag", false);
+      //     })
+      console.log(1)
+      $('.unneedpassword').css('display', 'none');
+      $('.needpassword').css('display', 'block')
+    }
+  }
+
+  var inputscroll = document.getElementsByClassName('edit_popup');
+  inputscroll.scrollIntoViewIfNeeded();
+
+  var data = [
+    { name: "../images/icons/00.jpg", sex: "男asdasdasfafaf" },
+    { name: "../images/icons/00.jpg", sex: "男afafdsdddddddddddddddddddddddddddddd" },
+    { name: "../images/icons/00.jpg", sex: "男dddddssssssssssssssssssssssssssssssssssssssssssssssssssssssssss" },
+    { name: "../images/icons/00.jpg", sex: "阿阿斯顿发ssssssssssssssssssssssssssssssssssssssssssssssssssss阿萨德sssssssssssssssssss四方股份ssssssasdasdassssssSD敢达sssssssssss阿萨德" }
+  ];
+  function ShowResults() {
+    data.forEach(function (value) {
+      (function () {
+        $('.content').append('<div class="content-data"><div  class="content-imagebox"><img src=' + value.name + ' alt="" width="100%"></div><div class="content-text"><p>' + value.sex + '</p></div></div>')
+      })()
+    })
+  }
+  ShowResults();
+
+
+  $('#jumpplaymode').click(function (e) {
+    window.location.href = './play.html';
+  })
+
+  $('.footer_cancelbtn').click(function () {
+    $('#content_input_value').val('')
+  })
+
+  $('.footer_surebtn').click(function () {
+    var value = $('#content_input_value').val();
+    console.log(value)
+    sessionStorage.setItem("flag", true);
+    //这里请求密码输入对不对
+    // $.ajax({
+    //   url: '',
+    //   type: 'POST',
+    //   dataType: 'JSON',
+    //   data:{
+    //     value:value,
+    //   }
+    // });
+    // $.when(ajax).done(function (data) {
+    $('.unneedpassword').css('display', 'block');
+    $('.needpassword').css('display', 'none');
+    // })
+
+  })
+
+  $('input').click(function () {
+    var target = this;
+    setTimeout(function () {
+      target.scrollIntoView(true);
+    }, 100)
+  })
+</script>
+
+</html>

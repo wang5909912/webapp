@@ -1,0 +1,235 @@
+html,
+    body {
+      position: relative;
+      height: 100%;
+    }
+
+    body {
+      background: #fff;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color: #000;
+      margin: 0;
+      padding: 0;
+    }
+
+    .play_header_fixed {
+      position: fixed;
+      z-index: 99;
+      width: 100%;
+      height: 5%
+    }
+
+    .paly_main {
+      height: 95%;
+      width: 100%;
+    }
+
+    .play_title {
+      background-color: #cc4b4a;
+      width: 100%;
+      height: 100%;
+      color: #fff;
+      text-align: center;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .play_title-filename {
+      display: inline-block;
+    }
+
+    .play_title-icon {
+      float: left;
+      font-size: 12px;
+      color: #fff;
+      cursor: pointer;
+      width: 50px;
+    }
+
+    .swiper-container {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .swiper-slide {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .gallery-top {
+      height: 30%;
+      width: 100%;
+      background-color: #333333;
+      color: #fff;
+    }
+
+    .gallery-thumbs {
+      padding-top: 5px;
+      height: 10%;
+      box-sizing: border-box;
+      background-color: #333333;
+      color: #fff;
+    }
+
+    .gallery-thumbs .swiper-slide {
+      width: 25%;
+      height: 100%;
+      opacity: 0.4;
+    }
+
+    .gallery-thumbs .swiper-slide-active {
+      opacity: 1;
+    }
+
+    .vertical-text div {
+      font-size: 16px;
+      font-weight: bold;
+      margin: 5px 0;
+      color: #cc4a4b;
+    }
+
+    .vertical-text p {
+      word-wrap: break-word;
+    }
+
+
+    .image_box{
+      display: none;
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: 99;
+    }
+    .image_background{
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 9;
+      background-color: #333;
+      z-index: 999;
+    }
+    .image_content{
+      position: fixed;
+      top: 30%;
+      width: 100%;
+      height: 40%;
+      z-index: 9999;
+    }
+    .background-close{
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 30px;
+    }
+    /* .image-image{
+      position:  relative ;
+    } */
+    .pinch-zoom-container{
+      height: 100% !important;
+    }
+
+    @media screen and (orientation: portrait) {
+
+      /*竖屏 css*/
+      .play_header {
+        width: 100%;
+        height: 5%
+      }
+
+      .swiper-image {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100%;
+
+      }
+      .swiper-remarks {
+        display: none;
+
+      }
+
+      .vertical-text {
+        display: block;
+        padding: 0 5px;
+        margin-top: 5px;
+      }
+    }
+
+    @media screen and (orientation: landscape) {
+
+      /*横屏 css*/
+      .play_header {
+        width: 100%;
+        height: 8%;
+      }
+      .play_header_fixed {
+        position: fixed;
+        z-index: 99;
+        width: 100%;
+        height: 8%;
+      }
+      .paly_main {
+        height: 92%;
+        width: 100%;
+      }
+      .play_title {
+        background-color: #333333;
+        width: 100%;
+        height: 100%;
+        color: #fff;
+        text-align: center;
+        border-bottom: 1px solid #797979;
+      }
+      .swiper-image {
+        background-size: cover;
+        background-position: center;
+        display: inline-block;
+        width: 80%;
+        height: 100%;
+      }
+      .gallery-top {
+        height: 80%;
+        width: 100%;
+
+      }
+      .gallery-thumbs {
+
+        height: 20%;
+        box-sizing: border-box;
+      }
+      .swiper-remarks {
+        display: inline-block;
+        word-wrap: break-word;
+        width: 19%;
+        height: 100%;
+        padding-top: 5px;
+        float: right;
+        overflow-y: auto;
+
+      }
+      .swiper-remark-title {
+        font-weight: bold;
+        font-size: 16px;
+        margin: 0 5px;
+        color: #cc4a4b;
+      }
+      .swiper-remarks::-webkit-scrollbar {
+        width: 0px
+      }
+      .vertical-text {
+        display: none;
+      }
+      .image_content {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+    }
+    }

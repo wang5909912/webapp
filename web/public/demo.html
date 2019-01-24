@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- saved from url=(0014)about:internet -->
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style type="text/css">
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .dialog {
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      position: fixed;
+      top: 0rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* display: none; */
+    }
+
+    .dialog_box {
+      text-align: center;
+    }
+
+    .box_top {
+      background-color: #fff;
+      padding-bottom: 0.4rem;
+      border-top-left-radius: 0.5rem;
+      border-top-right-radius: 0.5rem;
+    }
+
+    .box_top img {
+      width: 4rem;
+      height: 4rem;
+    }
+
+    .box_top p {
+      font-size: 0.6rem;
+      font-weight: 700;
+      margin: 0;
+
+    }
+
+    .box_bottom {
+      background-color: #FDDC67;
+      padding: 0.2rem 1rem;
+      border-bottom-left-radius: 0.5rem;
+      border-bottom-right-radius: 0.5rem;
+    }
+
+    .box_bottom>p:nth-child(1) {
+      font-size: 0.4rem;
+      padding-top: 0.5rem;
+    }
+
+    .box_bottom>p:nth-child(2) {
+      font-size: 0.4rem;
+      margin-top: 0.5rem;
+    }
+
+    .box_bottom>p:nth-child(3) {
+      font-size: 0.4rem;
+      padding-bottom: 0.5rem;
+    }
+
+    .box_close {
+      width: 16px;
+      height: 16px;
+      background-image: url('../images/dialogClose.png');
+      background-size: cover;
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      cursor: pointer;
+    }
+    .success_dialog{
+      display: flex;
+    }
+    .over_dialog{
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="dialog success_dialog">
+    <div class="dialog_box">
+      <div class="box_top">
+        <img src="../images//V1.png" alt="">
+        <p>账号开通成功!</p>
+      </div>
+      <div class="box_bottom">
+        <p>您的会员将于 2019-10-24 到期</p>
+        <p>请查收邮箱以便于及时激活您的账号</p>
+        <p>(可能误判为垃圾邮件)</p>
+      </div>
+      <div class="box_close" onclick="removesuccess()"></div>
+    </div>
+  </div>
+
+  <div class="dialog over_dialog">
+    <div class="dialog_box">
+      <div class="box_top">
+        <img src="../images//V2.png" alt="">
+        <p>此活动已结束!</p>
+      </div>
+      <div class="box_bottom">
+        <p></p>
+        <p>感谢您的关注</p>
+        <p>请登录<a href="www.islide.cc" style="color:#1C6EB9">www.islide.cc</a>下载PPT神器</p>
+      </div>
+      <div class="box_close" onclick="removeover()"></div>
+    </div>
+  </div>
+
+</body>
+<script>
+  function removesuccess() {
+    console.log(111)
+    var dialog = document.getElementsByClassName('success_dialog')[0];
+    dialog.style.display = 'none';
+  }
+
+  function removeover() {
+    console.log(222)
+    var dialog = document.getElementsByClassName('over_dialog')[0];
+    dialog.style.display = 'none';
+  }
+</script>
+
+</html>
